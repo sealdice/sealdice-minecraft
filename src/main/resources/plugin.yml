@@ -1,0 +1,14 @@
+name: SealDicePlugin
+version: 1.0.0
+main: com.szzrain.sealdice.SealDicePlugin
+description: SealDice Plugin, this plugin support sealdice interface
+author: SzzRain
+website: https://github.com/sealdice
+commands:
+  sealport:
+    description: change sealdice websocket server port and restart
+    usage: /<command> [port:int]
+permissions:
+  sealdice.admin:
+    default: op
+    description: This perm measure if a player is server admin, player who has this perm will be able to use admin command
