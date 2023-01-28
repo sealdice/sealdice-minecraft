@@ -1,5 +1,5 @@
 name: SealDicePlugin
-version: 1.0.0
+version: 1.0.1
 main: com.szzrain.sealdice.SealDicePlugin
 description: SealDice Plugin, this plugin support sealdice interface
 author: SzzRain
@@ -8,6 +8,9 @@ commands:
   sealport:
     description: change sealdice websocket server port and restart
     usage: /<command> [port:int]
+  sealdice:
+    description: send a message to sealdice in private
+    usage: /<command> (<args...>)
 permissions:
   sealdice.admin:
     default: op

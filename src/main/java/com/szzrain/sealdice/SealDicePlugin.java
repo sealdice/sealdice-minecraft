@@ -22,6 +22,7 @@ public class SealDicePlugin extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new MessageListener(this), this);
         new Thread(new WebSocketThread(8887)).start();
         Objects.requireNonNull(getCommand("sealport")).setExecutor(new CMD_SEALPORT());
+        Objects.requireNonNull(getCommand("sealdice")).setExecutor(new CMD_SEALDICE());
     }
 }
 class WebSocketThread implements Runnable {
