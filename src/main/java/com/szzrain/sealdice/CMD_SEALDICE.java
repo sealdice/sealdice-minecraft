@@ -15,12 +15,18 @@ public class CMD_SEALDICE implements CommandExecutor {
             StringBuilder sb = new StringBuilder();
             for (String arg:args) {
                 sb.append(arg);
+                sb.append(" ");
             }
+            sb.delete(sb.length()-1,sb.length());
             MessageBean msg = new MessageBean();
             msg.messageType = "private";
             msg.isAdmin = sender.isOp();
             msg.name = sender.getName();
-            msg.uuid = Objects.requireNonNull(sender.getServer().getPlayer(sender.getName())).getUniqueId().toString();
+            if (sender.getServer().getPlayer(sender.getName()) == null) {
+                msg.messageType = "group";
+            } else {
+                msg.uuid = Objects.requireNonNull(sender.getServer().getPlayer(sender.getName())).getUniqueId().toString();
+            }
             msg.content = sb.toString();
             EventBean eventb = new EventBean();
             eventb.event = msg;

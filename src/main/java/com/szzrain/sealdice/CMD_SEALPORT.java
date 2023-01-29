@@ -18,7 +18,7 @@ public class CMD_SEALPORT implements CommandExecutor {
                     return false;
                 }
             } else {
-                sender.sendMessage("Error: needs at one integer as command arg");
+                sender.sendMessage("Error: needs at least one integer as command arg");
                 return false;
             }
         } else {

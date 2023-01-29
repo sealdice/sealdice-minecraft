@@ -1,5 +1,5 @@
 name: SealDicePlugin
-version: 1.0.1
+version: 1.0.2
 main: com.szzrain.sealdice.SealDicePlugin
 description: SealDice Plugin, this plugin support sealdice interface
 author: SzzRain
