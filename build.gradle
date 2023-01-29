@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+version '1.0.1'
+
+repositories {
+    mavenCentral()
+    maven {url "https://repo.papermc.io/repository/maven-public/"}
+    maven {url "https://github.com/TooTallNate/Java-WebSocket"}
+    maven {url "https://github.com/alibaba/fastjson2"}
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:1.19.3-R0.1-SNAPSHOT"
+    implementation 'org.java-websocket:Java-WebSocket:1.5.3'
+    implementation 'com.alibaba.fastjson2:fastjson2:2.0.23'
+}
+mainClassName = 'com.szzrain.sealdice.SealDicePlugin'
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': "${mainClassName}"
+    }
+    duplicatesStrategy DuplicatesStrategy.EXCLUDE
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    from("src/main/resources") {
+        include ("plugin.yml")
+    }
+    with jar
+}
