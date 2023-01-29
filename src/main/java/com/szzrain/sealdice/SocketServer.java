@@ -43,7 +43,7 @@ public class SocketServer extends WebSocketServer {
     public void onMessage(WebSocket conn, String message) {
         MessageListener.onMessage(message);
 //        broadcast(message);
-        System.out.println(conn + ": " + message);
+//        System.out.println(conn + ": " + message);
     }
 
     @Override
